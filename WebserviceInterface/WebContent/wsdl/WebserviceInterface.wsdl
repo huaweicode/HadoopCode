@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://webservice.service.com" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://webservice.service.com" xmlns:intf="http://webservice.service.com" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://webservice.service.com" xmlns="http://www.w3.org/2001/XMLSchema">
+   <element name="queryResult">
+    <complexType/>
+   </element>
+   <element name="queryResultResponse">
+    <complexType>
+     <sequence>
+      <element name="queryResultReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="queryResultResponse">
+
+      <wsdl:part element="impl:queryResultResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="queryResultRequest">
+
+      <wsdl:part element="impl:queryResult" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="WebserviceInterface">
+
+      <wsdl:operation name="queryResult">
+
+         <wsdl:input message="impl:queryResultRequest" name="queryResultRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:queryResultResponse" name="queryResultResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="WebserviceInterfaceSoapBinding" type="impl:WebserviceInterface">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="queryResult">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="queryResultRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="queryResultResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="WebserviceInterfaceService">
+
+      <wsdl:port binding="impl:WebserviceInterfaceSoapBinding" name="WebserviceInterface">
+
+         <wsdlsoap:address location="http://localhost:8080/WebserviceInterface/services/WebserviceInterface"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>
