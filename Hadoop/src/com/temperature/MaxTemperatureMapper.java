@@ -35,7 +35,4 @@ public class MaxTemperatureMapper extends MapReduceBase implements Mapper<LongWr
 			output.collect(new Text(year), new IntWritable(airTemperature));
 		}
 	}
-
-	
-	
 }

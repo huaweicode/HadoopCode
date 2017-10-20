@@ -1,8 +1,12 @@
 package com.temperature;
 
 import java.io.IOException;
+import java.io.InputStream;
+import java.net.MalformedURLException;
+import java.net.URL;
 
 import org.apache.hadoop.fs.Path;
+import org.apache.hadoop.io.IOUtils;
 import org.apache.hadoop.io.IntWritable;
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapred.FileInputFormat;
@@ -28,5 +32,13 @@ public class MaxTemprature {
 		conf.setOutputValueClass(IntWritable.class);
 		JobClient.runJob(conf);
 	}
-
+	
+	private void readHooopUrl() throws MalformedURLException, IOException{
+		InputStream inputStream = null;
+		try {
+			inputStream = new URL("").openStream();
+		} finally {
+			IOUtils.closeStream(inputStream);
+		}
+	}
 }
