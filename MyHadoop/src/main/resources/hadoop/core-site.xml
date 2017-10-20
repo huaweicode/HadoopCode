@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
+
+<configuration>
+<!-- 定义master和url的端口 -->
+  <property>
+    <name>fs.default.name</name>
+    <value>hdfs://master:9000</value>
+  </property>
+  <!-- 临时文件夹，指定后需将使用到的所有子级文件夹都要手动创建出来，否则无法正常启动服务。 -->
+  <property>
+    <name>hadoop.tmp.dir</name>
+    <value>/home/conan/hadoop/tmp</value>
+  </property>
+  <property>
+    <name>io.sort.mb</name>
+    <value>256</value>
+  </property>
+</configuration>

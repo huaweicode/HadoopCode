@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
+
+<configuration>
+  <!-- 保存数据的目录 -->
+  <property>
+    <name>dfs.data.dir</name>
+    <value>/home/conan/hadoop/data</value>
+  </property>
+  <!-- 指定hdfs保留数据的副本数量 -->
+  <property>
+    <name>dfs.replication</name>
+    <value>1</value>
+  </property>
+  <!-- hdfs集群的别名 -->
+  <property>
+    <name>dfs.permissions</name>
+    <value>false</value>
+  </property>
+</configuration>
