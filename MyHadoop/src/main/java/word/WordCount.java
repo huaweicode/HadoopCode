@@ -22,7 +22,6 @@ import org.apache.hadoop.mapred.TextOutputFormat;
 public class WordCount {
 	
 	public static class WordCountMapper extends MapReduceBase implements Mapper<Object, Text, Text, IntWritable>{
-
 		private final static IntWritable one = new IntWritable();
 		private Text word = new Text();
 		public void map(Object key, Text value,
@@ -76,5 +75,4 @@ public class WordCount {
         JobClient.runJob(conf);
         System.exit(0);
 	}
-
 }

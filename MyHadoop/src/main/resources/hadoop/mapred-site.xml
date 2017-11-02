@@ -5,6 +5,6 @@
 <!-- 连接jobtrack服务器的配置项，默认不写是local，map数1，reduce数1 -->
   <property>
     <name>mapred.job.tracker</name>
-    <value>hdfs://master:9001</value>
+    <value><!-- hdfs://master:9001 --></value>
   </property>
 </configuration>
