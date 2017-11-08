@@ -31,6 +31,11 @@ public class BookController {
 	@Autowired
 	private BookService bookService;
 	
+	/**
+	 * 查询图书清单
+	 * @param model
+	 * @return
+	 */
 	@RequestMapping(value="/list",method = RequestMethod.GET)
 	private String list(Model model){
 		List<Book> list = bookService.getList();
@@ -38,6 +43,12 @@ public class BookController {
 		return "list";
 	}
 	
+	/**
+	 * 查看单条图书
+	 * @param bookId
+	 * @param model
+	 * @return
+	 */
 	@RequestMapping(value = "/{bookId}/detail",method = RequestMethod.GET)
 	private String detail(@PathVariable("bookId") Long bookId,Model model){
 		if (bookId == null) {
@@ -50,6 +61,12 @@ public class BookController {
 		model.addAttribute("book",book);
 		return "detail";
 	}
+	/**
+	 * 图书预定
+	 * @param bookId
+	 * @param studentId
+	 * @return
+	 */
 	@RequestMapping(value = "/{bookId}/appoint" ,method = RequestMethod.POST,produces={"application/json; charset=utf-8"})
 	@ResponseBody
 	private Result<AppointExecution> appoint(@PathVariable("bookId") Long bookId,@RequestParam("studentId") Long studentId){
@@ -68,7 +85,5 @@ public class BookController {
 		}
 		return new Result<AppointExecution>(true,execution);
 	}
-	
-	
 
 }

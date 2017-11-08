@@ -54,5 +54,4 @@ public class AppointExecution {
 	public void setAppointment(Appointment appointment) {
 		this.appointment = appointment;
 	}
-
 }
