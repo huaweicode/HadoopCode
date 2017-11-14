@@ -18,7 +18,13 @@
       <groupId>javax.servlet</groupId>
       <artifactId>javax.servlet-api</artifactId>
       <version>3.1.0</version>
+      <scope>provided</scope> <!-- 该包只在编译和测试的时候用 -->
     </dependency>
+     <!-- <dependency>
+          <groupId>javax.servlet</groupId>
+          <artifactId>servlet-api</artifactId>
+          <version>${servlet.version}</version>
+      </dependency> -->
     <!-- 添加jsp支持 -->
     <dependency>
       <groupId>javax.servlet.jsp</groupId>
@@ -148,6 +154,11 @@
       <artifactId>junit</artifactId>
       <version>4.12</version>
       <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.alibaba</groupId>
+      <artifactId>fastjson</artifactId>
+      <version>1.2.7</version>
     </dependency>
   </dependencies>
   <build>

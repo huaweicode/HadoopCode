@@ -7,6 +7,4 @@
 	<typeAliases>
 		<package name="ssm.blog.entity"/>
 	</typeAliases>
-
-
 </configuration>
